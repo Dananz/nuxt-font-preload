@@ -1,9 +1,9 @@
-import type { PreloadedFont } from "../types";
+import type { FontPreloadConfig } from "../types";
 import { meta } from "../configs";
 import { useLogger } from "@nuxt/kit";
 
 const logger = useLogger(meta.name);
-export function generateFontFaces(options: { fonts: PreloadedFont[] }): string {
+export function generateFontFaces(options: FontPreloadConfig): string {
   let styleContent = "";
 
   for (const font of options.fonts) {

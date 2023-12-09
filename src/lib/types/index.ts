@@ -1,4 +1,4 @@
-export interface CustomFontFaceDescriptors {
+export interface CustomFontDescriptors {
   ascentOverride?: string;
   descentOverride?: string;
   fontDisplay?: "auto" | "block" | "fallback" | "optional" | "swap";
@@ -10,7 +10,7 @@ export interface CustomFontFaceDescriptors {
   fontTariant?: string;
 }
 
-export interface CustomFontFaceSource {
+export interface CustomFontSource {
   url: string;
   format: string;
   /** Adds a preload link for this font weight */
@@ -18,16 +18,17 @@ export interface CustomFontFaceSource {
   /** Adds crossorigin attribute to preload link, defaults to "anonymous" */
   crossorigin?: string;
 }
-export interface CustomFontFace extends CustomFontFaceDescriptors {
-  sources: CustomFontFaceSource[];
+
+export interface CustomFontWeight extends CustomFontDescriptors {
+  sources: CustomFontSource[];
   weight: number;
 }
 
 export interface PreloadedFont {
   fontFamily: string;
-  weights: CustomFontFace[];
+  weights: CustomFontWeight[];
   /** Default options to apply to all weights */
-  defaultOptions?: Omit<CustomFontFace, "sources" | "weight">;
+  defaultOptions?: Omit<CustomFontWeight, "sources" | "weight">;
 }
 
 export interface FontPreloadConfig {
