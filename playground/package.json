@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "nuxt-font-preload-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview"
+  },
+  "devDependencies": {
+    "nuxt": "latest"
+  }
+}
