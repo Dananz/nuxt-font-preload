@@ -1,6 +1,6 @@
 {
   "name": "nuxt-font-preload",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "My new Nuxt module",
   "repository": "dananz/nuxt-font-preload",
   "license": "MIT",
