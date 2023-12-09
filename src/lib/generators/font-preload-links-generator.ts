@@ -1,5 +1,5 @@
 import type { AppHeadMetaObject } from "@nuxt/schema";
-import type { FontPreloadConfig } from "../types";
+import type { FontPreloadConfig } from "../../runtime/types";
 
 export function generatePreloadLinks(
   options: FontPreloadConfig

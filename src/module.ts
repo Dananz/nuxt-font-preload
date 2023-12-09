@@ -1,9 +1,7 @@
-import { addTypeTemplate, createResolver, defineNuxtModule } from "@nuxt/kit";
-import type { FontPreloadConfig } from "./lib/types";
+import { defineNuxtModule } from "@nuxt/kit";
+import type { FontPreloadConfig } from "./runtime/types";
 import { generateFontFaces, generatePreloadLinks } from "./lib/generators";
 import { meta } from "./lib/configs";
-
-const resolver = createResolver(import.meta.url);
 
 export default defineNuxtModule<FontPreloadConfig>({
   meta: {
@@ -15,11 +13,6 @@ export default defineNuxtModule<FontPreloadConfig>({
     fonts: [],
   },
   setup(options, nuxt) {
-    addTypeTemplate({
-      filename: "types/nuxt-preload-fonts.d.ts",
-      src: resolver.resolve("lib/types/index.ts"),
-    });
-
     const customFonts = options?.fonts || [];
 
     // If no fonts are defined, don't do anything

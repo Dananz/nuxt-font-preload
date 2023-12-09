@@ -1,4 +1,4 @@
-import type { FontPreloadConfig } from "../types";
+import type { FontPreloadConfig } from "../../runtime/types";
 import { meta } from "../configs";
 import { useLogger } from "@nuxt/kit";
 
