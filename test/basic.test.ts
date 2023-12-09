@@ -29,11 +29,14 @@ describe("ssr", async () => {
     const preloadLinks = generatePreloadLinks({ fonts: [MontserratBasicTest] });
 
     expect(preloadLinks).not.toBeNull();
+    expect(preloadLinks).toHaveLength(1);
 
     const dom = new JSDOM(html);
     const document = dom.window.document;
 
     const linkTag = document.querySelector('link[rel="preload"]');
+    expect(linkTag).not.toBeNull();
+
     for (const link of preloadLinks!) {
       expect(link).not.toBeNull();
       expect(linkTag?.getAttribute("as")).toEqual(link.as);
