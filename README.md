@@ -34,27 +34,25 @@ npm i -D nuxt-font-preload
 ```js
 export default defineNuxtConfig({
   modules: ["nuxt-font-preload"],
+
   fontPreload: {
     fonts: [
       {
         fontFamily: "Montserrat",
-        weights: {
-          400: [
-            {
-              url: "fonts/Montserrat-Regular.woff2",
-              format: "woff2",
-              preload: true,
-            },
-          ],
-          700: [
-            {
-              url: "fonts/Montserrat-Bold.woff2",
-              format: "woff2",
-              preload: true,
-            },
-          ],
-        },
-        defaultOptions: { fontDisplay: "swap" }, // Applies to all weights
+        weights: [
+          {
+            weight: 400,
+            sources: [
+              {
+                url: "fonts/Montserrat-Regular.woff2",
+                format: "woff2",
+                preload: true,
+              },
+            ],
+          },
+        ],
+        // Applies to all weights
+        defaultOptions: { fontDisplay: "swap" },
       },
     ],
   },
