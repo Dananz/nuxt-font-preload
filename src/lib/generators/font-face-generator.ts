@@ -7,13 +7,13 @@ export function generateFontFaces(options: { fonts: PreloadedFont[] }): string {
   let styleContent = "";
 
   for (const font of options.fonts) {
-    if (!font.weights.length) {
+    if (!font.weights?.length) {
       logger.warn(`${font.fontFamily} is missing weights array`);
       continue;
     }
 
     font.weights.forEach((weightConfig) => {
-      if (!weightConfig.sources.length)
+      if (!weightConfig.sources?.length)
         return logger.warn(
           `${font.fontFamily}:${weightConfig.weight} is missing sources array`
         );
