@@ -7,7 +7,7 @@ export interface CustomFontDescriptors {
   fontStretch?: string;
   fontStyle?: string;
   unicodeRange?: string;
-  fontTariant?: string;
+  fontVariant?: string;
 }
 
 export interface CustomFontSource {
