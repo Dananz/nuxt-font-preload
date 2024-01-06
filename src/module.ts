@@ -22,14 +22,6 @@ export default defineNuxtModule<FontPreloadConfig>({
     const preloadLinks = generatePreloadLinks({ fonts: customFonts });
 
     nuxt.options.app.head.style?.push({ innerHTML: fontFacesStyle });
-
-    // TODO: remove assertion when types are fixed
-    nuxt.options.app.head.link?.push(
-      ...(preloadLinks as typeof nuxt.options.app.head.link)
-    );
+    nuxt.options.app.head.link?.push(...preloadLinks);
   },
 });
-
-/**
- *
- */
